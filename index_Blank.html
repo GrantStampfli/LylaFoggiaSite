@@ -1,0 +1,32 @@
+<script type="text/javascript"></script>
+			<div id="contact">
+				<div class="content effect slow">
+					<div class="wrap medium">
+						<div class="box">
+							<h3 class="topic">CONTACT</h3>
+						</div>
+					</div>
+					<div class="wrap small">
+						<form class="data" action="ajax.php?process=deliver" method="POST">
+							<div class="collection">
+								<input class="field" type="text" placeholder="Full name" name="fullname"/>
+							</div>
+							<div class="collection">
+								<input class="field" type="text" placeholder="Mail address" name="from"/>
+							</div>
+							<div class="collection">
+								<input class="field" type="text" placeholder="Subject" name="subject"/>
+							</div>
+							<div class="collection">
+								<textarea class="area" placeholder="Message" name="message"></textarea>
+							</div>
+						</form>
+					</div>
+					<div class="wrap small">
+						<a class="button border fast" href="ajax.php">Send</a>
+					</div>
+					<script type="text/javascript">
+					$(function () {
+						$("#contact").substitute($("<p>Thank you</p>").attr("class", "button border fast"));
+					});
+				</script>
