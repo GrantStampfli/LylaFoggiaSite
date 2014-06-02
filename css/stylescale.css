@@ -175,8 +175,8 @@ a:focus {
 .brand-heading {
 	font-family: 'chunkfiveroman';
     font-size: 40px;
-    text-transform:none;
-    letter-spacing: 1.5pt;
+    text-transform:uppercase;
+    letter-spacing: 3pt;
 	color: white;
 	text-shadow:
 	-1.5px -1.5px 0 #00aef9,
