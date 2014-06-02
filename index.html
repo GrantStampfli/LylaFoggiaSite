@@ -66,7 +66,13 @@
     <section class="intro">
         <div class="intro-body">
             <div class="container">
-                <div class="row">
+                            <div class="row">
+            <div id="text-shadow-box">
+    <div id="tsb-box"></div>
+    <div id="tsb-wall">
+        <div id="tsb-ie"></div>
+   
+
                     <div class="col-md-18 col-md-offset-0">
                         <h1 class="brand-heading">Blockbuster Messaging</h1>
                         <p class="intro-text">Home of the killer media kit, press release and other essential marketing tools!</p>
@@ -78,12 +84,13 @@
                     </div>
                 </div>
             </div>
+             <div id="tsb-spot"></div></div></div>
         </div>
     </section>
 
     <section id="kits" class="container content-section text-center">
         <div class="row, sec2" >
-            <div class="col-lg-18 col-md-offset-0">
+            <div class="col-lg-12 col-md-12">
                 <h2>Media Kits</h2>
                 <p>Lorem ipsum dolor sit amet, temporibus consectetuer ad imperdiet pede, consequat amet et, blandit volutpat libero laoreet natoque nascetur et, interdum vel commodo sollicitudin natoque, dolor morbi sit vel ligula. Magna odio nam ipsum euismod posuere diam, gravida eu est, fusce donec, eros metus, sollicitudin vestibulum fusce tincidunt cubilia varius aptent. </p>
                 <p>Varius pede sed vel, vestibulum suspendisse porta, morbi scelerisque condimentum in neque suspendisse libero, quam id consectetuer egestas imperdiet, elit scelerisque. Porta et metus fringilla mi ut, tincidunt ligula sodales volutpat diam consequat. Dui lectus consequat odio condimentum, in sapien vitae, lectus neque odio metus nec dictum. A odio eleifend, sed per nulla per et mattis, dictumst elit leo enim arcu eu, ac cubilia wisi. Vestibulum vitae porttitor quis interdum odio integer, aut fringilla lorem dolor eu, ac velit vitae, scelerisque fringilla ut ullamcorper, elit enim et sed vitae condimentum id. Sapien in sodales arcu tristique, curabitur lectus pretium id lectus nec. Non tempor egestas donec arcu, quam elementum dictumst amet duis ac, vivamus urna aliquam suspendisse, porttitor quisque augue varius pellentesque.</p>
@@ -128,7 +135,7 @@
         <section id="about" class="content-section text-center">
         <div class="download-section">
             <div class="container">
-                <div class="col-lg-12 col-md-offset-0">
+                <div class="col-lg-12 col-md-12">
                     <h2>About</h2>
                     <p>Lorem ipsum dolor sit amet, temporibus consectetuer ad imperdiet pede, consequat amet et, blandit volutpat libero laoreet natoque nascetur et, interdum vel commodo sollicitudin natoque, dolor morbi sit vel ligula. Magna odio nam ipsum euismod posuere diam, gravida eu est, fusce donec, eros metus, sollicitudin vestibulum fusce tincidunt cubilia varius aptent. </p>
                     <p>Varius pede sed vel, vestibulum suspendisse porta, morbi scelerisque condimentum in neque suspendisse libero, quam id consectetuer egestas imperdiet, elit scelerisque. Porta et metus fringilla mi ut, tincidunt ligula sodales volutpat diam consequat. Dui lectus consequat odio condimentum, in sapien vitae, lectus neque odio metus nec dictum. A odio eleifend, sed per nulla per et mattis, dictumst elit leo enim arcu eu, ac cubilia wisi. Vestibulum vitae porttitor quis interdum odio integer, aut fringilla lorem dolor eu, ac velit vitae, scelerisque fringilla ut ullamcorper, elit enim et sed vitae condimentum id. Sapien in sodales arcu tristique, curabitur lectus pretium id lectus nec. Non tempor egestas donec arcu, quam elementum dictumst amet duis ac, vivamus urna aliquam suspendisse, porttitor quisque augue varius pellentesque.</p>
@@ -163,6 +170,53 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/scripts.js"></script>
+    <script type="text/javascript" language="javascript" charset="utf-8">
+var text = null,
+    spot = null,
+    box = null,
+    boxProperty = '';
+
+init();
+
+function init() {
+    text = document.getElementById('tsb-text');
+    spot = document.getElementById('tsb-spot');
+    box = document.getElementById('tsb-box');
+    
+    if (typeof box.style.webkitBoxShadow == 'string') {
+        boxProperty = 'webkitBoxShadow';
+    } else if (typeof box.style.MozBoxShadow == 'string') {
+        boxProperty = 'MozBoxShadow';
+    } else if (typeof box.style.boxShadow == 'string') {
+        boxProperty = 'boxShadow';
+    }
+
+    if (text && spot && box) {
+        document.getElementById('text-shadow-box').onmousemove = onMouseMove;
+        document.getElementById('text-shadow-box').ontouchmove = function (e) {e.preventDefault(); e.stopPropagation(); onMouseMove({clientX: e.touches[0].clientX, clientY: e.touches[0].clientY});};
+    }
+}
+
+function onMouseMove(e) {
+    if (typeof e === 'undefined' || typeof e.clientX === 'undefined') {
+        return;
+    }
+    
+    var xm = (e.clientX - Math.floor(window.innerWidth / 2)) * 0.4,
+        ym = (e.clientY - Math.floor(window.innerHeight / 3)) * 0.4,
+        d = Math.round(Math.sqrt(xm*xm + ym*ym) / 5);
+    
+    text.style.textShadow = -xm + 'px ' + -ym + 'px ' + (d + 10) + 'px black';
+    
+    if (boxProperty) {
+        box.style[boxProperty] = '0 ' + -ym + 'px ' + (d + 30) + 'px black';
+    }
+    
+    xm = e.clientX - Math.floor(window.innerWidth / 2);
+    ym = e.clientY - Math.floor(window.innerHeight / 2);
+    spot.style.backgroundPosition = xm + 'px ' + ym + 'px';
+}
+</script>
 
 </body>
 
