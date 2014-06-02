@@ -175,7 +175,8 @@ a:focus {
 .brand-heading {
 	font-family: 'chunkfiveroman';
     font-size: 40px;
-    text-transform:uppercase;
+    text-transform:none;
+    letter-spacing: 1.5pt;
 	color: white;
 	text-shadow:
 	-1.5px -1.5px 0 #00aef9,
@@ -187,9 +188,10 @@ a:focus {
 .intro-text {
     font-size: 18px;
     font-family: "mitigate",sans-serif;
-    letter-spacing: -.5pt;
+    letter-spacing: -.25pt;
 	word-spacing: 3.5pt;
     text-transform:none;
+    font-style: bold;
 
  
 
