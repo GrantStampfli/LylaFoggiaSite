@@ -12,6 +12,7 @@
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <!-- Fonts -->
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
     <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <!-- Custom Theme CSS -->
@@ -66,13 +67,7 @@
     <section class="intro">
         <div class="intro-body">
             <div class="container">
-                            <div class="row">
-            <div id="text-shadow-box">
-    <div id="tsb-box"></div>
-    <div id="tsb-wall">
-        <div id="tsb-ie"></div>
-   
-
+                <div class="row">
                     <div class="col-md-18 col-md-offset-0">
                         <h1 class="brand-heading">Blockbuster Messaging</h1>
                         <p class="intro-text">Home of the killer media kit, press release and other essential marketing tools!</p>
@@ -84,7 +79,6 @@
                     </div>
                 </div>
             </div>
-             <div id="tsb-spot"></div></div></div>
         </div>
     </section>
 
@@ -170,53 +164,6 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/scripts.js"></script>
-    <script type="text/javascript" language="javascript" charset="utf-8">
-var text = null,
-    spot = null,
-    box = null,
-    boxProperty = '';
-
-init();
-
-function init() {
-    text = document.getElementById('tsb-text');
-    spot = document.getElementById('tsb-spot');
-    box = document.getElementById('tsb-box');
-    
-    if (typeof box.style.webkitBoxShadow == 'string') {
-        boxProperty = 'webkitBoxShadow';
-    } else if (typeof box.style.MozBoxShadow == 'string') {
-        boxProperty = 'MozBoxShadow';
-    } else if (typeof box.style.boxShadow == 'string') {
-        boxProperty = 'boxShadow';
-    }
-
-    if (text && spot && box) {
-        document.getElementById('text-shadow-box').onmousemove = onMouseMove;
-        document.getElementById('text-shadow-box').ontouchmove = function (e) {e.preventDefault(); e.stopPropagation(); onMouseMove({clientX: e.touches[0].clientX, clientY: e.touches[0].clientY});};
-    }
-}
-
-function onMouseMove(e) {
-    if (typeof e === 'undefined' || typeof e.clientX === 'undefined') {
-        return;
-    }
-    
-    var xm = (e.clientX - Math.floor(window.innerWidth / 2)) * 0.4,
-        ym = (e.clientY - Math.floor(window.innerHeight / 3)) * 0.4,
-        d = Math.round(Math.sqrt(xm*xm + ym*ym) / 5);
-    
-    text.style.textShadow = -xm + 'px ' + -ym + 'px ' + (d + 10) + 'px black';
-    
-    if (boxProperty) {
-        box.style[boxProperty] = '0 ' + -ym + 'px ' + (d + 30) + 'px black';
-    }
-    
-    xm = e.clientX - Math.floor(window.innerWidth / 2);
-    ym = e.clientY - Math.floor(window.innerHeight / 2);
-    spot.style.backgroundPosition = xm + 'px ' + ym + 'px';
-}
-</script>
 
 </body>
 
