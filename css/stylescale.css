@@ -49,6 +49,7 @@ h6 {
     font-weight: 700;
     font-style: bold;
     letter-spacing: 1px;
+    text-align: center;
 }
 
 p {
@@ -189,6 +190,7 @@ a:focus {
     letter-spacing: -.5pt;
 	word-spacing: 3.5pt;
     text-transform:none;
+
  
 
 }
@@ -287,7 +289,9 @@ a:focus {
 .content-section {
     padding-top: 100px;
     height: 100%;
+    text-align: left;
 }
+
 .white-section {
     width: 100%;
      height: auto;
@@ -310,6 +314,7 @@ a:focus {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    text-align: left;
 }
 
 #map {
