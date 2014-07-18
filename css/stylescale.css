@@ -306,15 +306,14 @@ a:focus {
 }
 .download-section {
     width: 100%;
+     height: auto;
     padding: 50px 0;
     color: #000;
-    background: url(../img/about-bg2.jpg) no-repeat center center scroll;
-    background-color: #000;
+    background-color: #fff;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-    text-align: left;
 }
 
 #map {
